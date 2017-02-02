@@ -17,6 +17,8 @@ int main() {
 
 
 	al_draw_triangle(160, 270, 550, 490, 10, 260, al_map_rgb(0, 240, 0), 5);
+	
+	al_draw_triangle(100, 340, 250, 390, 90, 460, al_map_rgb(0, 0, 240), 5);
 
 	al_draw_triangle(100, 340, 250, 390, 90, 460, al_map_rgb(0, 0, 240), 5);
 
