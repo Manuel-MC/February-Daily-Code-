@@ -29,7 +29,7 @@ int main() {
 
 	display = al_create_display(640, 480);
 
-	al_play_sample(sample, 1.0, 0.0, 2, ALLEGRO_PLAYMODE_LOOP, NULL);
+	al_play_sample(sample, 1.0, 0.0, 1, ALLEGRO_PLAYMODE_LOOP, NULL);
 
 	al_rest(80.0);
 	al_destroy_display(display);
