@@ -87,7 +87,7 @@ int main()
 			//if the down button is pressed AND we're still above the bottom wall
 			//move the box "down" by 4 pixels
 			if ((key[1] && player_y <= 480 - 32) &&
-				!(player_x > 70 && player_x <298 && player_y <202 && player_y>194))
+				!(player_x > 70 && player_x <298 && player_y > 66&& player_y<74))
 			
 			{
 				player_y += 4.0;
