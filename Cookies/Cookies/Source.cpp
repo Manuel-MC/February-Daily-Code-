@@ -7,5 +7,6 @@ int main() {
 		cout << "Yes (y) no (q)" << endl;
 		cin >> input;
 		cout << "Here are your cookies" << endl;
+
 	}
 }

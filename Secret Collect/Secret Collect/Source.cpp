@@ -80,6 +80,11 @@ int main()
 			if ((key[0] && player_y >= 0) &&
 				!(player_x > 70 && player_x <298 && player_y <202 && player_y>194))
 
+			if ((key[0] && player_y >= 0) &&
+					!(player_x > 370 && player_x <498 && player_y <302 && player_y>294))
+
+				if ((key[0] && player_y >= 0) &&
+					!(player_x > 70 && player_x <298 && player_y >394 && player_y<406))
 			{
 				player_y -= 4.0;
 			}
@@ -88,7 +93,12 @@ int main()
 			//move the box "down" by 4 pixels
 			if ((key[1] && player_y <= 480 - 32) &&
 				!(player_x > 70 && player_x <298 && player_y > 66&& player_y<74))
-			
+
+				if ((key[1] && player_y <= 480 - 32) &&
+					!(player_x > 370 && player_x <498 && player_y >66 && player_y<74))
+
+					if ((key[1] && player_y <= 480 - 32) &&
+						!(player_x > 70 && player_x <298 && player_y >266 && player_y<276))
 			{
 				player_y += 4.0;
 			}
@@ -96,6 +106,12 @@ int main()
 			//move the box left by 4 pixels
 			if ((key[2] && player_x >= 0)&&
 				!(player_x < 302 && player_x >110 && player_y <198 && player_y>70))
+
+			if ((key[2] && player_x >= 0) &&
+				!(player_x < 502 && player_x >406 && player_y <298 && player_y>70))
+
+				if ((key[2] && player_x >= 0) &&
+					!(player_x < 302 && player_x >110 && player_y <398 && player_y>270))
 			{
 				player_x -= 4.0;
 			}
@@ -103,7 +119,14 @@ int main()
 			//if the left button is pressed AND we're still left of the right wall
 			//move the box right by 4 pixels
 			if ((key[3] && player_x <= 640 - 32) &&
-				!(player_x > 66 && player_x <78 && player_y >66 && player_y<198)) {
+				!(player_x > 66 && player_x <78 && player_y >66 && player_y<198))
+
+				if ((key[3] && player_x <= 640 - 32) &&
+					!(player_x > 366 && player_x <380 && player_y >70 && player_y<298))
+
+					if ((key[3] && player_x <= 640 - 32) &&
+						!(player_x > 66 && player_x <80 && player_y >270 && player_y<398))
+			{
 				player_x += 4.0;
 			}
 
@@ -191,7 +214,8 @@ int main()
 	
 			al_draw_filled_rectangle(100, 100, 300, 200, al_map_rgb(200, 100, 0));
 
-al_draw_filled_rectangle(500, 300, 400, 100, al_map_rgb(50, 250, 0));
+	al_draw_filled_rectangle(500, 300, 400, 100, al_map_rgb(50, 250, 0));
+	al_draw_filled_rectangle(100, 300, 300, 400, al_map_rgb(0, 50, 250));
 		
 			al_flip_display();
 		}
