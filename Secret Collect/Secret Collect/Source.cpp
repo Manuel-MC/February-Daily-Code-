@@ -1,5 +1,6 @@
 #include <allegro5/allegro.h>
 #include<allegro5/allegro_primitives.h>
+#include <allegro5/allegro_font.h>
 #include <iostream>
 using namespace std;
 
@@ -10,7 +11,9 @@ int main()
 	ALLEGRO_EVENT_QUEUE *event_queue = NULL;
 	ALLEGRO_TIMER *timer = NULL;
 	ALLEGRO_BITMAP *player = NULL;
-
+	ALLEGRO_FONT *font = NULL;
+	
+	int lives = 3;
 	//these two variables hold the x and y positions of the player
 	//initalize these variables to where you want your player to start
 	float player_x = 50;
@@ -28,7 +31,7 @@ int main()
 
 	al_init();
 	al_init_primitives_addon();
-
+	al_init_font_addon();
 	//get the keyboard ready to use
 	al_install_keyboard();
 
@@ -129,6 +132,15 @@ int main()
 			{
 				player_x += 4.0;
 			}
+			//death wall collision
+			if (player_x > -4 && player_x < 398 && player_y>=208 && player_y < 260) {
+				player_x = 50;
+				player_y = 50;
+				lives--;
+			}
+
+
+
 
 			//redraw at every tick of the timer
 			redraw = true;
@@ -211,12 +223,14 @@ int main()
 			al_draw_bitmap(player, player_x, player_y, 0);
 
 			//wall 1
-	
+			al_draw_textf(font, al_map_rgb(255, 255, 255), 100, 10, ALLEGRO_ALIGN_CENTRE, "lives = %i", lives);
 			al_draw_filled_rectangle(100, 100, 300, 200, al_map_rgb(200, 100, 0));
 
 	al_draw_filled_rectangle(500, 300, 400, 100, al_map_rgb(50, 250, 0));
 	al_draw_filled_rectangle(100, 300, 300, 400, al_map_rgb(0, 50, 250));
-		
+	//death wall
+	al_draw_filled_rectangle(-2, 240, 398, 260, al_map_rgb(255, 0, 0));
+	
 			al_flip_display();
 		}
 	}
